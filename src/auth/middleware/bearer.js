@@ -4,6 +4,7 @@ const users = require('../models/users.js');
 
 module.exports = async (req, res, next) => {
 
+  // console.log('inside bearer', req);
   try {
 
     if (!req.headers.authorization) { _authError(); }
