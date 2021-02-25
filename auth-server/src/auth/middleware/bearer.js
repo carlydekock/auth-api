@@ -1,25 +1,25 @@
-'use strict';
+// 'use strict';
 
-const users = require('../models/users.js')
+// const users = require('../models/users.js')
 
-module.exports = async (req, res, next) => {
+// module.exports = async (req, res, next) => {
 
-  try {
+//   try {
 
-    if (!req.headers.authorization) { _authError() }
+//     if (!req.headers.authorization) { _authError() }
 
-    const token = req.headers.authorization.split(' ').pop();
-    const validUser = await users.authenticateWithToken(token);
+//     const token = req.headers.authorization.split(' ').pop();
+//     const validUser = await users.authenticateWithToken(token);
 
-    req.user = validUser;
-    req.token = validUser.token;
-    next();
+//     req.user = validUser;
+//     req.token = validUser.token;
+//     next();
 
-  } catch (e) {
-    _authError();
-  }
+//   } catch (e) {
+//     _authError();
+//   }
 
-  function _authError() {
-    next('Invalid Login');
-  }
-}
+//   function _authError() {
+//     next('Invalid Login');
+//   }
+// }
